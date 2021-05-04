@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.geon.userboard.mapper.UserBoardMapper">
+
+	<select id='read' resultType="org.geon.userboard.domain.UserBoardVO">
+	<![CDATA[
+		select * from tbl_board_user where buno = #{buno}
+	]]>
+	</select>
+	
+	<insert id="insertSelectKey">
+	<selectKey keyProperty="buno" order="BEFORE" resultType="long">
+		select seq_board_user.nextval from dual
+	</selectKey>
+	
+	<![CDATA[
+		insert into tbl_board_user (buno, title, content, writer, category)
+		 VALUES (#{buno},#{title},#{content},#{writer},#{category})
+	]]>
+	</insert>
+	
+	<update id="update">
+	<![CDATA[
+		update tbl_board_user set title=#{title},content=#{content},updateDate = sysdate where buno = #{buno}
+	]]>
+	</update>
+	
+	<update id="delete">
+	<![CDATA[
+		update tbl_board_user set enabled=0,updateDate = sysdate where buno = #{buno}
+	]]>
+	</update>
+	
+	<select id="getList" resultType="org.geon.userboard.domain.UserBoardVO">
+		<![CDATA[
+		select
+		buno, title, content, writer, regdate, updatedate, category, enabled
+		from (
+		select /*+ INDEX(tbl_board_user idx_board_user_category) */
+            rownum rn, buno, title, content,writer, regdate, updatedate, category, enabled
+         from tbl_board_user
+         where ]]>
+         	<include refid="search"></include>
+         <![CDATA[
+         	category = #{category} and enabled = 1 and buno > 0 
+           	and rownum <= #{page} * #{perSheet})
+		where rn > ( #{page} - 1 ) * #{perSheet}
+		 ]]>
+		
+	</select>
+
+	<select id="getTotalCount" resultType="int">
+		<![CDATA[
+		select count(buno) from tbl_board_user where
+		]]>
+		<include refid="search"></include>
+		<![CDATA[
+		category = #{category} and enabled = 1
+		]]>
+	</select>
+
+	<sql id="search">
+		<!-- keyword는 null체크를 메서드에서 해주었다, -->
+		<if test="arr != null">
+			<!-- arr을 쓰면 getArr을 호출한다. -->
+			<foreach collection="arr" item="item" open="(" close=")and"
+				separator="OR">
+
+				<if test="item == 't'.toString()">
+					title like '%'||#{keyword}||'%'
+				</if>
+				<if test="item == 'c'.toString()">
+					content like '%'||#{keyword}||'%'
+				</if>
+				<if test="item == 'w'.toString()">
+					writer like '%'||#{keyword}||'%'
+				</if>
+			</foreach>
+		</if>
+	</sql>
+	
+</mapper>

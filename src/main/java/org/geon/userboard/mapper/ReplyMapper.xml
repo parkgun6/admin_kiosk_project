@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.geon.userboard.mapper.ReplyMapper">
+
+	<insert id="insert">
+	<![CDATA[
+		insert into tbl_reply (rno, buno, content, writer) 
+		VALUES (seq_reply.nextval,#{buno},#{content},#{writer})
+	]]>
+	</insert>
+	
+	<update id="update">
+	<![CDATA[
+		update tbl_reply set content = #{content} , updatedate = sysdate where rno = #{rno}
+
+	]]>
+	</update>
+	
+	<update id="delete">
+	<![CDATA[
+		update tbl_reply set enabled = 0, updatedate = sysdate where rno = #{rno}
+	]]>
+	</update>
+	
+	<select id="getList" resultType="org.geon.userboard.domain.ReplyVO">
+	<![CDATA[
+		select rno,buno,content,writer,regdate,
+       			updatedate
+		from tbl_reply
+		where buno = #{buno} and enabled = 1 and rno > 0
+	]]>
+	</select>
+
+	<select id="getTotalCount" resultType="int">
+	<![CDATA[
+		select count(rno) from tbl_reply where tbl_reply.enabled = 1 and buno = #{buno}
+	]]>
+	</select>
+
+</mapper>
