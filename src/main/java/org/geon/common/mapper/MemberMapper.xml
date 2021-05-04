@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.geon.common.mapper.MemberMapper">
+
+
+  <resultMap type="org.geon.common.domain.MemberVO" id="memberMap">
+    <id property="userid" column="userid"/>
+    <result property="userid" column="userid"/>
+    <result property="userpw" column="userpw"/>
+    <result property="userName" column="username"/>
+    <result property="regDate" column="regdate"/>
+    <result property="updateDate" column="updatedate"/>
+    <collection property="authList" resultMap="authMap">
+    </collection> 
+  </resultMap>
+  
+  <resultMap type="org.geon.common.domain.AuthVO" id="authMap">
+    <result property="userid" column="userid"/>
+    <result property="auth" column="auth"/>
+  </resultMap>
+
+	<select id="read" resultMap="memberMap">
+		<![CDATA[
+		SELECT tm.userid,userpw,username,enabled,regdate,
+				updatedate,auth
+		FROM tbl_member tm
+			LEFT OUTER JOIN tbl_member_auth tma on tm.userid = tma.userid
+		WHERE tm.userid = #{userid}
+		]]>
+	</select>
+	
+	<insert id="insertMember">
+	<![CDATA[
+		insert into tbl_member(userid, userpw, username) values (#{userid},#{userpw},#{userName})
+	]]>
+	</insert>
+
+	<insert id="insertAuth">
+	<![CDATA[
+		insert into tbl_member_auth (userid, auth) values (#{userid},#{auth})
+	]]>
+	</insert>
+
+</mapper>
