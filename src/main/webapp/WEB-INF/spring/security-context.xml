@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.4.xsd">
+
+
+	<bean id="bcrypb"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+
+	<bean id="customUserDetailsService"
+		class="org.geon.common.security.CustomUserDetailsService"></bean>
+
+	<bean id="egovStrictHttpFirewall"
+		class="org.springframework.security.web.firewall.StrictHttpFirewall">
+		<property name="allowSemicolon" value="true" />
+		<property name="allowUrlEncodedDoubleSlash" value="true" />
+	</bean>
+	<security:http-firewall
+		ref="egovStrictHttpFirewall" />
+
+
+	<security:http>
+
+		<security:intercept-url pattern="/owner"
+			access="permitAll" />
+		<security:intercept-url
+			pattern="/owner/myshop/**"
+			access="hasAnyRole('ROLE_MEMBER','ROLE_ADMIN')" />
+		<security:intercept-url pattern="/sample/admin"
+			access="hasRole('ROLE_ADMIN')" />
+
+		<security:form-login login-page="/login" />
+		<security:logout logout-url="/logout"
+			invalidate-session="true" />
+
+		<security:access-denied-handler
+			error-page="/accessError" />
+
+		<security:form-login />
+
+	</security:http>
+
+
+
+
+<security:authentication-manager>
+									<!-- provider 안에 선언 -->
+	<security:authentication-provider user-service-ref="customUserDetailsService">
+								<!-- bean에 등록된 id -->
+		<security:password-encoder ref="bcrypb"/>
+		
+	</security:authentication-provider>
+
+</security:authentication-manager>
+
+</beans>
