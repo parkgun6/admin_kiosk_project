@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.geon.myshop.mapper.MenuMapper">
+
+	
+	<resultMap type="org.geon.common.dto.AttachFileDTO" id="AttachFileDTO">
+		<id column="uuid" property="uuid" />
+		<result column="filename" property="fileName" />
+		<result column="uploadpath" property="uploadPath" />
+		<result column="mno" property="mno" />
+	</resultMap>
+
+	<resultMap type="org.geon.myshop.dto.MenuDTO" id="MenuDTO">
+		<id column="mno" property="mno" />
+		<result column="name" property="name" />
+		<result column="explanation" property="explanation" />
+		<result column="price" property="price" />
+		<result column="category" property="category" />
+		<collection property="fileList" resultMap="AttachFileDTO" />
+	</resultMap>
+	
+	<select id="getList"  parameterType="org.geon.myshop.dto.MenuDTO" resultMap="MenuDTO">
+	<![CDATA[
+		select 
+   			tm.mno, tm.name, tm.explanation, tm.price, tm.enabled,
+    		tma.uuid, tma.fileName, tma.uploadPath
+		from tbl_menu tm
+    		left join tbl_menu_attach tma on tm.mno = tma.mno
+		where tm.sno = #{sno} and enabled = 1
+		order by tm.mno asc
+	]]>
+	</select>
+	
+	<select id="getOne" parameterType="org.geon.myshop.dto.MenuDTO" resultMap="MenuDTO">
+	<![CDATA[
+		select  
+			tm.mno,tm.name,tm.explanation,tm.price,tm.enabled,
+       		tm.sno, tma.uuid,tma.fileName,tma.uploadPath
+		from tbl_menu tm
+        	left join tbl_menu_attach tma on tm.mno = tma.mno
+		where tm.mno = #{mno} and enabled = 1
+
+	]]>
+	</select>
+
+	<insert id="insertMenu">
+	<selectKey keyProperty="mno" order="BEFORE" resultType="long">
+		select seq_menu.nextval from dual
+	</selectKey>
+	<![CDATA[
+		insert into tbl_menu (sno, mno, name, explanation, price)
+		 VALUES (#{sno},#{mno},#{name},#{explanation},#{price})
+	]]>
+	</insert>
+	
+	<insert id="insertCategory">
+	<![CDATA[
+		insert into tbl_menu_category (mno, cno) VALUES (#{mno},#{cno})
+	]]>
+	</insert>
+
+	<update id="updateMenu">
+	<![CDATA[
+		update tbl_menu set name = #{name}, explanation = #{explanation}, price = #{price} where mno = #{mno}
+	]]>
+	</update>
+	
+	<delete id="deleteCategory">
+	<![CDATA[
+		delete from tbl_menu_category WHERE mno = #{mno} and cno = #{cno}
+	]]>
+	</delete>
+	
+	<update id="changeStatus">
+	<![CDATA[
+		update tbl_menu set status = #{status} where mno = #{mno}
+	]]>
+	</update>
+	
+	<update id="deleteMenu">
+	<![CDATA[
+		update tbl_menu set enabled = 0 where mno = #{mno}
+	]]>
+	</update>
+	
+</mapper>

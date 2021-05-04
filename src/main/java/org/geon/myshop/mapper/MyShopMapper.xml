@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.geon.myshop.mapper.MyShopMapper">
+	
+	<select id="getShop" resultType="org.geon.myshop.domain.MyShopVO">
+	<![CDATA[
+		select * from tbl_store where userid = #{userid}
+	]]>
+	</select>
+	
+	<update id="updateInfo">
+	<![CDATA[
+		update tbl_store set info=#{info} where sno=#{sno}
+	]]>
+	</update>
+	
+	<update id="updateGuide">
+	<![CDATA[
+		update tbl_store set guide=#{guide} where sno=#{sno}
+	]]>
+	</update>
+
+	<update id="updateStore">
+	<![CDATA[
+	update tbl_store set tel=#{tel} ,address=#{address} ,sname=#{sname},
+                     businessHour=#{businessHour},holiday=#{holiday},lat=#{lat},lng=#{lng} where sno=#{sno}
+	]]>
+	</update>
+	
+	
+</mapper>
