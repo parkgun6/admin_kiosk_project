@@ -1,5 +1,5 @@
 # admin_kiosk_project
-Spring MVC, MyBatis, Oracle 11g XE, Firebase를 활용한 
+<h1>Spring MVC, MyBatis, Oracle 11g XE, Firebase를 활용한 </h1>
 Admin side 키오스크 프로젝트
 ![001](https://user-images.githubusercontent.com/76540460/118370262-e342b180-b5e1-11eb-9ae1-b76783ff871e.jpg)
 ![002](https://user-images.githubusercontent.com/76540460/118370265-e473de80-b5e1-11eb-9ec3-a0af8084defc.jpg)
