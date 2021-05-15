@@ -1,9 +1,11 @@
 # admin_kiosk_project
-admin side 키오스크 프로젝트
-![001](https://user-images.githubusercontent.com/76540460/116990928-c4edd380-ad0e-11eb-8e0a-cb3e1044e3a2.jpg)
-![002](https://user-images.githubusercontent.com/76540460/116990932-c61f0080-ad0e-11eb-81d1-a256bc304ae7.jpg)
-![003](https://user-images.githubusercontent.com/76540460/116990933-c6b79700-ad0e-11eb-8e6e-cb4dc637f46a.jpg)
-![004](https://user-images.githubusercontent.com/76540460/116990935-c6b79700-ad0e-11eb-9dc5-c282d97623fa.jpg)
-![005](https://user-images.githubusercontent.com/76540460/116990939-c7502d80-ad0e-11eb-85fc-ab7e8e7aab26.jpg)
-![006](https://user-images.githubusercontent.com/76540460/116990940-c7e8c400-ad0e-11eb-87cd-b0f7a9f47af6.jpg)
-![007](https://user-images.githubusercontent.com/76540460/116990941-c7e8c400-ad0e-11eb-83a4-cc65964ef847.jpg)
+키오스크 프로젝트
+![001](https://user-images.githubusercontent.com/76540460/118370262-e342b180-b5e1-11eb-9ae1-b76783ff871e.jpg)
+![002](https://user-images.githubusercontent.com/76540460/118370265-e473de80-b5e1-11eb-9ec3-a0af8084defc.jpg)
+![003](https://user-images.githubusercontent.com/76540460/118370266-e5a50b80-b5e1-11eb-92a7-1b3d62f8fa65.jpg)
+![004](https://user-images.githubusercontent.com/76540460/118370268-e63da200-b5e1-11eb-9ef7-395380c98a0c.jpg)
+![005](https://user-images.githubusercontent.com/76540460/118370271-e6d63880-b5e1-11eb-8f20-e7dace8d4385.jpg)
+![006](https://user-images.githubusercontent.com/76540460/118370272-e76ecf00-b5e1-11eb-9973-dac336135744.jpg)
+![007](https://user-images.githubusercontent.com/76540460/118370273-e8076580-b5e1-11eb-9285-543cb4f96ffd.jpg)
+![008](https://user-images.githubusercontent.com/76540460/118370274-e89ffc00-b5e1-11eb-8ac2-f7eb328820eb.jpg)
+![009](https://user-images.githubusercontent.com/76540460/118370275-e9389280-b5e1-11eb-897b-4d43d8ac4dfd.jpg)
