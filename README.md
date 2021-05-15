@@ -8,4 +8,4 @@ Spring MVC, MyBatis, Oracle 11g XE, Firebase를 활용한 Admin side 키오스�
 ![006](https://user-images.githubusercontent.com/76540460/118370272-e76ecf00-b5e1-11eb-9973-dac336135744.jpg)
 ![007](https://user-images.githubusercontent.com/76540460/118370273-e8076580-b5e1-11eb-9285-543cb4f96ffd.jpg)
 ![008](https://user-images.githubusercontent.com/76540460/118370274-e89ffc00-b5e1-11eb-8ac2-f7eb328820eb.jpg)
-![009](https://user-images.githubusercontent.com/76540460/118370275-e9389280-b5e1-11eb-897b-4d43d8ac4dfd.jpg)
+![009](https://user-images.githubusercontent.com/76540460/118371015-644f7800-b5e5-11eb-88c6-5d06cfc211aa.jpg)
