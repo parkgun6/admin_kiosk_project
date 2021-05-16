@@ -1,12 +1,12 @@
 # admin_kiosk_project
 Spring MVC, MyBatis, Oracle 11g XE, Firebase를 활용한
 Admin side 키오스크 프로젝트
-![001](https://user-images.githubusercontent.com/76540460/118397825-e779d800-b690-11eb-9406-a0b19de189ac.jpg)
-![002](https://user-images.githubusercontent.com/76540460/118397828-e8ab0500-b690-11eb-9019-e13cd6785a7b.jpg)
-![003](https://user-images.githubusercontent.com/76540460/118397830-e9dc3200-b690-11eb-98b9-d1691d58fd7d.jpg)
-![004](https://user-images.githubusercontent.com/76540460/118397831-ea74c880-b690-11eb-9b67-132e3a73d4f0.jpg)
-![005](https://user-images.githubusercontent.com/76540460/118397832-eb0d5f00-b690-11eb-853b-87f77f470c3c.jpg)
-![006](https://user-images.githubusercontent.com/76540460/118397833-eba5f580-b690-11eb-97c1-583a54aed409.jpg)
-![007](https://user-images.githubusercontent.com/76540460/118397835-ec3e8c00-b690-11eb-81c6-2de0344e19f7.jpg)
-![008](https://user-images.githubusercontent.com/76540460/118397836-ed6fb900-b690-11eb-8bab-df421a964eca.jpg)
-![009](https://user-images.githubusercontent.com/76540460/118397837-ed6fb900-b690-11eb-816c-815914d48eda.jpg)
+![001](https://user-images.githubusercontent.com/76540460/118398937-b0f28c00-b695-11eb-88c7-7dc2613e3478.jpg)
+![002](https://user-images.githubusercontent.com/76540460/118398940-b223b900-b695-11eb-802d-5f318c2ef24b.jpg)
+![003](https://user-images.githubusercontent.com/76540460/118398942-b2bc4f80-b695-11eb-8dbb-4f823c5bbaed.jpg)
+![004](https://user-images.githubusercontent.com/76540460/118398943-b2bc4f80-b695-11eb-8f7a-21d5f7746095.jpg)
+![005](https://user-images.githubusercontent.com/76540460/118398944-b354e600-b695-11eb-85e8-fed4c3a1cc78.jpg)
+![006](https://user-images.githubusercontent.com/76540460/118398945-b3ed7c80-b695-11eb-9ca1-2066806441f2.jpg)
+![007](https://user-images.githubusercontent.com/76540460/118398946-b3ed7c80-b695-11eb-9978-f356b4f39f8d.jpg)
+![008](https://user-images.githubusercontent.com/76540460/118398947-b4861300-b695-11eb-883d-a41f75334147.jpg)
+![009](https://user-images.githubusercontent.com/76540460/118398948-b4861300-b695-11eb-9121-9e80d7e81b95.jpg)
